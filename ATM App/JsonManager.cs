@@ -20,12 +20,12 @@ namespace ATM_App
             }
         }
 
-        public static void DeserializeData(Type type, object data, string file_name, DataContractJsonSerializer js = null)
+        public static T DeserializeData<T>(object data, string file_name, DataContractJsonSerializer js = null)
         {
-            js = (js == null ? new DataContractJsonSerializer(type) : throw new ArgumentNullException("Can't deserialize due to JSON is null"));
+            js = js ?? new DataContractJsonSerializer(typeof(T));
             using (var file = new FileStream(file_name, FileMode.OpenOrCreate))
             {
-                var newUsers = js.ReadObject(file) as Type;
+                return (T)js.ReadObject(file);
             }
         }
     }

@@ -14,8 +14,8 @@ namespace ATM_App
     [DataContract]
     public class AccountController
     {
-        [DataMember] private List<User> users = new List<User>();
-        public List<User> Users => users;
+        [DataMember] private static List<User> users = new List<User>();
+        public static List<User> Users => users;
 
         private static bool CheckValid(string _pinCode, string _cardNumber = "")
         {

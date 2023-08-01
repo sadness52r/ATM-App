@@ -28,7 +28,7 @@ namespace ATM_App
             if (numOflaunches == 1)
                 accController = new AccountController();
             if (numOflaunches > 1)
-                JsonManager.DeserializeData(accController.Users.GetType(), accController.Users, "users.json");
+                JsonManager.DeserializeData<List<User>>(accController.GetType(), "users.json");
         }
 
         private void FormReg_Load(object sender, EventArgs e)

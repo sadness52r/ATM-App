@@ -71,7 +71,7 @@ namespace ATM_App
 
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            JsonManager.SerializeData(accController.Users.GetType(), accController.Users, "users.json");
+            JsonManager.SerializeData(AccountController.Users.GetType().GetType(), AccountController.Users.GetType(), "users.json");
         }
     }
 }
