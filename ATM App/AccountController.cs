@@ -59,20 +59,20 @@ namespace ATM_App
             if (CheckValid(_pinCode, _cardNumber))
             {
                 int user_index = FindUser(_cardNumber, _pinCode);
-                if (user_index == -2)
+                switch (user_index)
                 {
-                    Random rnd = new Random();
-                    User user = new User((uint)rnd.Next(1000), _cardNumber, _pinCode);
-                    users.Add(user);
-                    OpenMain(user, form, this);
-                }
-                else if (user_index == -1)
-                {
-                    MessageBox.Show("Wrong PIN!");
-                }
-                else
-                {
-                    OpenMain(users[user_index], form, this);
+                    case -2:
+                        Random rnd = new Random();
+                        User user = new User((uint)rnd.Next(1000), _cardNumber, _pinCode);
+                        users.Add(user);
+                        OpenMain(user, form, this);
+                        break;
+                    case -1:
+                        MessageBox.Show("Wrong PIN!");
+                        break;
+                    default:
+                        OpenMain(users[user_index], form, this);
+                        break;
                 }
             }
             else
