@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.panelAccount = new System.Windows.Forms.Panel();
             this.bAccount = new System.Windows.Forms.Button();
             this.panelPutMoney = new System.Windows.Forms.Panel();
@@ -91,13 +92,19 @@
             // 
             // bPutMoney
             // 
+            this.bPutMoney.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.bPutMoney.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bPutMoney.BackgroundImage")));
+            this.bPutMoney.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bPutMoney.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bPutMoney.Font = new System.Drawing.Font("Facon", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bPutMoney.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.bPutMoney.Location = new System.Drawing.Point(0, 0);
             this.bPutMoney.Name = "bPutMoney";
             this.bPutMoney.Size = new System.Drawing.Size(472, 316);
             this.bPutMoney.TabIndex = 0;
             this.bPutMoney.Text = "PUT MONEY";
-            this.bPutMoney.UseVisualStyleBackColor = true;
+            this.bPutMoney.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.bPutMoney.UseVisualStyleBackColor = false;
             this.bPutMoney.Click += new System.EventHandler(this.bPutMoney_Click);
             // 
             // panelCashOut
@@ -107,18 +114,23 @@
             this.panelCashOut.Controls.Add(this.bCashOut);
             this.panelCashOut.Location = new System.Drawing.Point(0, 323);
             this.panelCashOut.Name = "panelCashOut";
-            this.panelCashOut.Size = new System.Drawing.Size(472, 298);
+            this.panelCashOut.Size = new System.Drawing.Size(472, 288);
             this.panelCashOut.TabIndex = 2;
             // 
             // bCashOut
             // 
+            this.bCashOut.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.bCashOut.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bCashOut.BackgroundImage")));
+            this.bCashOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bCashOut.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bCashOut.Font = new System.Drawing.Font("Facon", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bCashOut.Location = new System.Drawing.Point(0, 0);
             this.bCashOut.Name = "bCashOut";
-            this.bCashOut.Size = new System.Drawing.Size(472, 298);
+            this.bCashOut.Size = new System.Drawing.Size(472, 288);
             this.bCashOut.TabIndex = 1;
             this.bCashOut.Text = "CASH OUT";
-            this.bCashOut.UseVisualStyleBackColor = true;
+            this.bCashOut.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.bCashOut.UseVisualStyleBackColor = false;
             this.bCashOut.Click += new System.EventHandler(this.bCashOut_Click);
             // 
             // panelHistory
@@ -126,18 +138,22 @@
             this.panelHistory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelHistory.Controls.Add(this.listBoxHistory);
-            this.panelHistory.Location = new System.Drawing.Point(478, 323);
+            this.panelHistory.Location = new System.Drawing.Point(490, 323);
             this.panelHistory.Name = "panelHistory";
-            this.panelHistory.Size = new System.Drawing.Size(880, 288);
+            this.panelHistory.Size = new System.Drawing.Size(868, 298);
             this.panelHistory.TabIndex = 3;
             // 
             // listBoxHistory
             // 
+            this.listBoxHistory.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.listBoxHistory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBoxHistory.Font = new System.Drawing.Font("Unispace", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxHistory.ForeColor = System.Drawing.Color.Black;
             this.listBoxHistory.FormattingEnabled = true;
+            this.listBoxHistory.ItemHeight = 23;
             this.listBoxHistory.Location = new System.Drawing.Point(0, 0);
             this.listBoxHistory.Name = "listBoxHistory";
-            this.listBoxHistory.Size = new System.Drawing.Size(880, 288);
+            this.listBoxHistory.Size = new System.Drawing.Size(868, 298);
             this.listBoxHistory.TabIndex = 0;
             // 
             // flowLayoutPanelAccountSettings
@@ -211,18 +227,20 @@
             // labelTitleCardNumber
             // 
             this.labelTitleCardNumber.AutoSize = true;
+            this.labelTitleCardNumber.Font = new System.Drawing.Font("Ponter PC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitleCardNumber.Location = new System.Drawing.Point(1017, 30);
             this.labelTitleCardNumber.Name = "labelTitleCardNumber";
-            this.labelTitleCardNumber.Size = new System.Drawing.Size(70, 13);
+            this.labelTitleCardNumber.Size = new System.Drawing.Size(121, 25);
             this.labelTitleCardNumber.TabIndex = 5;
             this.labelTitleCardNumber.Text = "Card number:";
             // 
             // labelTitleBalance
             // 
             this.labelTitleBalance.AutoSize = true;
+            this.labelTitleBalance.Font = new System.Drawing.Font("Ponter PC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitleBalance.Location = new System.Drawing.Point(1017, 66);
             this.labelTitleBalance.Name = "labelTitleBalance";
-            this.labelTitleBalance.Size = new System.Drawing.Size(49, 13);
+            this.labelTitleBalance.Size = new System.Drawing.Size(65, 20);
             this.labelTitleBalance.TabIndex = 6;
             this.labelTitleBalance.Text = "Balance:";
             // 
@@ -234,17 +252,19 @@
             // labelCardNumber
             // 
             this.labelCardNumber.AutoSize = true;
-            this.labelCardNumber.Location = new System.Drawing.Point(1133, 30);
+            this.labelCardNumber.Font = new System.Drawing.Font("Ponter PC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCardNumber.Location = new System.Drawing.Point(1144, 34);
             this.labelCardNumber.Name = "labelCardNumber";
-            this.labelCardNumber.Size = new System.Drawing.Size(0, 13);
+            this.labelCardNumber.Size = new System.Drawing.Size(0, 20);
             this.labelCardNumber.TabIndex = 7;
             // 
             // labelBalance
             // 
             this.labelBalance.AutoSize = true;
+            this.labelBalance.Font = new System.Drawing.Font("Ponter PC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBalance.Location = new System.Drawing.Point(1133, 66);
             this.labelBalance.Name = "labelBalance";
-            this.labelBalance.Size = new System.Drawing.Size(19, 13);
+            this.labelBalance.Size = new System.Drawing.Size(25, 20);
             this.labelBalance.TabIndex = 8;
             this.labelBalance.Text = "0$";
             // 
@@ -252,6 +272,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(1370, 623);
             this.Controls.Add(this.labelBalance);
             this.Controls.Add(this.labelCardNumber);
@@ -261,6 +282,7 @@
             this.Controls.Add(this.panelHistory);
             this.Controls.Add(this.panelCashOut);
             this.Controls.Add(this.panelPutMoney);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";

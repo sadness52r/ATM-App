@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormChangePin));
             this.labelChangePin = new System.Windows.Forms.Label();
             this.textBoxChangePin = new System.Windows.Forms.TextBox();
             this.bChangePin = new System.Windows.Forms.Button();
@@ -82,13 +83,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Beige;
             this.ClientSize = new System.Drawing.Size(1518, 146);
             this.Controls.Add(this.bShowPin);
             this.Controls.Add(this.bChangePin);
             this.Controls.Add(this.textBoxChangePin);
             this.Controls.Add(this.labelChangePin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FormChangePin";
             this.Text = "FormChangePin";
+            this.Load += new System.EventHandler(this.FormChangePin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

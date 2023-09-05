@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCashOut));
             this.labelCashOut = new System.Windows.Forms.Label();
             this.textBoxCashOut = new System.Windows.Forms.TextBox();
             this.bCashOut = new System.Windows.Forms.Button();
@@ -65,13 +66,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Beige;
             this.ClientSize = new System.Drawing.Size(1518, 146);
             this.Controls.Add(this.bCashOut);
             this.Controls.Add(this.textBoxCashOut);
             this.Controls.Add(this.labelCashOut);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FormCashOut";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCashOut";
+            this.Load += new System.EventHandler(this.FormCashOut_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

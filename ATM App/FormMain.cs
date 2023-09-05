@@ -8,6 +8,8 @@ using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace ATM_App
 {
@@ -71,7 +73,7 @@ namespace ATM_App
 
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            JsonManager.SerializeData(accController.Users.GetType(), accController.Users, "users.json");
+            File.WriteAllText("users.json", JsonConvert.SerializeObject(accController.Users));
         }
     }
 }

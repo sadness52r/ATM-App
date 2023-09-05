@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPutMoney));
             this.textBoxPutMoney = new System.Windows.Forms.TextBox();
             this.labelPutMoney = new System.Windows.Forms.Label();
             this.bPut = new System.Windows.Forms.Button();
@@ -65,13 +66,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Beige;
             this.ClientSize = new System.Drawing.Size(1518, 146);
             this.Controls.Add(this.bPut);
             this.Controls.Add(this.labelPutMoney);
             this.Controls.Add(this.textBoxPutMoney);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FormPutMoney";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPutMoney";
+            this.Load += new System.EventHandler(this.FormPutMoney_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

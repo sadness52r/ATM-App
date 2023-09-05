@@ -41,5 +41,10 @@ namespace ATM_App
         {
             accController.ChangePin(textBoxChangePin.Text, user.CardNumber, user.PinCode);
         }
+
+        private void FormChangePin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

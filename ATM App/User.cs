@@ -7,19 +7,22 @@ using System.Threading.Tasks;
 
 namespace ATM_App
 {
-    [DataContract]
     public class User
     {
-        [DataMember] public uint Money { get; set; }
-        [DataMember] public string CardNumber { get; set; }
-        [DataMember] public string PinCode { get; set; }
-        [DataMember] public List<string> TransactionsHistory { get; set; }
+        public const int MAX_TRANSACTIONS_NUMBER = 10;
+        public uint Money { get; set; }
+        public string CardNumber { get; set; }
+        public string PinCode { get; set; }
+        public int TransactionsNumber { get; set; }
+        public List<string> TransactionsHistory { get; set; }
+        public DateTime LastTransaction { get; set; }
 
         public User(uint money, string cardNumber, string pinCode)
         {
             Money = money;
             CardNumber = cardNumber;
             PinCode = pinCode;
+            TransactionsNumber = 0;
             TransactionsHistory = new List<string>();
         }
     }

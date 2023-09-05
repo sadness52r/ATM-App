@@ -11,12 +11,11 @@ using System.Windows.Forms;
 
 namespace ATM_App
 {
-    [DataContract]
     public partial class FormPutMoney : Form
     {
         private User user;
         private Label labelBalance;
-        [DataMember] private ListBox lBoxHistory;
+        private ListBox lBoxHistory;
         public FormPutMoney(User user, Label label, ListBox lBoxHistory)
         {
             InitializeComponent();
@@ -28,13 +27,20 @@ namespace ATM_App
         private void bPut_Click(object sender, EventArgs e)
         {
             MoneyController moneyController = new MoneyController(user);
-            moneyController.Put(textBoxPutMoney.Text);
+            moneyController.TryTransaction(this, null, textBoxPutMoney.Text);
             if (labelBalance.Text != user.Money.ToString() + '$')
             {
                 labelBalance.Text = user.Money.ToString() + '$';
+                user.LastTransaction = DateTime.Now;
+                user.TransactionsNumber++;
                 user.TransactionsHistory.Add('[' + DateTime.Now.ToString() + ']' + " Replenishment for the amount: " + textBoxPutMoney.Text + "$. Your balance is " + user.Money);
                 lBoxHistory.Items.Add(user.TransactionsHistory[user.TransactionsHistory.Count - 1]);
             }
+        }
+
+        private void FormPutMoney_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

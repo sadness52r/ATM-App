@@ -4,35 +4,29 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Json;
+using Newtonsoft.Json;
+using System.IO;
 using System.Text;
+
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ATM_App
 {
-    [DataContract]
     public partial class FormReg : Form
     {
         private bool isShowedPin = false;
-        [DataMember] private long numOflaunches = 0;
-        AccountController accController;
+        AccountController accController = new AccountController();
 
         public FormReg()
         {
             InitializeComponent();
-            numOflaunches++;
-            //JsonManager.SerializeData(numOflaunches.GetType(), numOflaunches, "Number_of_Launches.json");
-            //JsonManager.DeserializeData(numOflaunches.GetType(), numOflaunches, "Number_of_Launches.json");
-            if (numOflaunches == 1)
-                accController = new AccountController();
-            if (numOflaunches > 1)
-                JsonManager.DeserializeData(accController.Users.GetType(), accController.Users, "users.json");
         }
 
         private void FormReg_Load(object sender, EventArgs e)
         {
+            accController.Users = File.Exists("users.json") ? JsonConvert.DeserializeObject<List<User>>(File.ReadAllText("users.json")) : new List<User>();
+
             textBoxCardNumber.Text = "Enter your card number";
             textBoxPin.Text = "Enter your pin code";
             textBoxCardNumber.ForeColor = textBoxPin.ForeColor = Color.Gray;

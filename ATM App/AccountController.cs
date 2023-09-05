@@ -11,11 +11,9 @@ using System.Windows.Forms;
 
 namespace ATM_App
 {
-    [DataContract]
     public class AccountController
     {
-        [DataMember] private List<User> users = new List<User>();
-        public List<User> Users => users;
+        public List<User> Users { get; set; }
 
         private static bool CheckValid(string _pinCode, string _cardNumber = "")
         {
@@ -35,10 +33,10 @@ namespace ATM_App
 
         private int FindUser(string _cardNumber, string _pinCode)
         {
-            for (int i = 0; i < users.Count; i++)
-                if (users[i].CardNumber == _cardNumber)
+            for (int i = 0; i < Users.Count; i++)
+                if (Users[i].CardNumber == _cardNumber)
                 {
-                    if (users[i].PinCode == _pinCode)
+                    if (Users[i].PinCode == _pinCode)
                         return i;
                     else
                         return -1;
@@ -64,14 +62,14 @@ namespace ATM_App
                     case -2:
                         Random rnd = new Random();
                         User user = new User((uint)rnd.Next(1000), _cardNumber, _pinCode);
-                        users.Add(user);
+                        Users.Add(user);
                         OpenMain(user, form, this);
                         break;
                     case -1:
                         MessageBox.Show("Wrong PIN!");
                         break;
                     default:
-                        OpenMain(users[user_index], form, this);
+                        OpenMain(Users[user_index], form, this);
                         break;
                 }
             }
@@ -86,7 +84,7 @@ namespace ATM_App
             if (CheckValid(new_pin))
             {
                 int user_index = FindUser(_cardNumber, _oldPin);
-                users[user_index].PinCode = new_pin;
+                Users[user_index].PinCode = new_pin;
                 MessageBox.Show("Pin was changed succesfully!!!");
             }
             else
