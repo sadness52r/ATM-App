@@ -33,9 +33,11 @@ namespace ATM_App
         private void bShowPin_Click(object sender, EventArgs e)
         {
             if (isShowedPin)
-                isShowedPin = ChangeViewPin(ref bShowPin, isShowedPin, @"A:\Проекты VB\ATM App\ATM App\Materials\eye.png");
+                isShowedPin = ChangeViewPin(ref bShowPin, isShowedPin, AppDomain.CurrentDomain.BaseDirectory +
+                    @"..\..\Materials\eye.png");
             else
-                isShowedPin = ChangeViewPin(ref bShowPin, isShowedPin, @"A:\Проекты VB\ATM App\ATM App\Materials\eye_closed.png");
+                isShowedPin = ChangeViewPin(ref bShowPin, isShowedPin, AppDomain.CurrentDomain.BaseDirectory + 
+                    @"..\..\Materials\eye_closed.png");
         }
         private void bChangePin_Click(object sender, EventArgs e)
         {
