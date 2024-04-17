@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30413.136
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATM App", "ATM App\ATM App.csproj", "{41C85081-D849-402C-AF9C-91A95639E0FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATM-App.Tests", "ATM-App.Tests\ATM-App.Tests.csproj", "{807EBE3B-679B-411F-AA1B-B90E62DBF8AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{41C85081-D849-402C-AF9C-91A95639E0FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41C85081-D849-402C-AF9C-91A95639E0FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41C85081-D849-402C-AF9C-91A95639E0FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{807EBE3B-679B-411F-AA1B-B90E62DBF8AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{807EBE3B-679B-411F-AA1B-B90E62DBF8AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{807EBE3B-679B-411F-AA1B-B90E62DBF8AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{807EBE3B-679B-411F-AA1B-B90E62DBF8AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
