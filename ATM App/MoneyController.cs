@@ -7,17 +7,18 @@ using System.Windows.Forms;
 
 namespace ATM_App
 {
-    class MoneyController
+    public class MoneyController
     {
         private uint _money;
         private User user;
-        
+
+        public MoneyController() { }
         public MoneyController(User user)
         {
             this.user = user;
         }
 
-        private bool CheckFormat(string money) 
+        protected bool CheckFormat(string money) 
         {
             bool isParsed = uint.TryParse(money, out _money);
             if (isParsed && _money <= 1000)
